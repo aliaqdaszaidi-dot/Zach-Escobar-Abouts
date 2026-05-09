@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 20 14% 6%;
+  --foreground: 0 0% 95%;
+  --primary: 200 100% 50%;
+  --accent: 280 100% 65%;
+  --card: 20 14% 12%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 20 14% 6%;
+    --foreground: 0 0% 95%;
+    --primary: 200 100% 50%;
+    --accent: 280 100% 65%;
+    --card: 20 14% 12%;
+  }
+}
+
+* {
+  @apply border-card;
+}
+
+html {
+  @apply bg-background text-foreground;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+@layer components {
+  .heading-display {
+    @apply text-5xl md:text-7xl font-bold font-display tracking-tighter;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-5xl font-bold font-display;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold font-display;
+  }
+
+  .text-accent-blue {
+    @apply text-primary;
+  }
+
+  .text-accent-purple {
+    @apply text-accent;
+  }
+
+  .glass {
+    @apply bg-card/40 backdrop-blur border border-white/10;
+  }
+
+  .glass-hover {
+    @apply glass hover:bg-card/60 transition-all duration-300;
+  }
+}
